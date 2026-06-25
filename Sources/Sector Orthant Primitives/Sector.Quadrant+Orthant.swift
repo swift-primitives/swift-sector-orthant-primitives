@@ -1,8 +1,8 @@
 // Sector.Quadrant+Orthant.swift
 // Lossless projection between Sector.Quadrant and its Orthant<2> carrier.
 
-public import Sector_Primitives
 public import Orthant_Primitives
+public import Sector_Primitives
 
 extension Sector.Quadrant {
     /// The 2D orthant this quadrant occupies (axis 0 = X, axis 1 = Y).

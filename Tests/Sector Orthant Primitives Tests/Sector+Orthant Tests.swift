@@ -1,8 +1,7 @@
 // Sector+Orthant Tests.swift
 
-import Testing
-
 import Sector_Orthant_Primitives
+import Testing
 
 @Suite
 struct `Sector.Quadrant Orthant projection` {

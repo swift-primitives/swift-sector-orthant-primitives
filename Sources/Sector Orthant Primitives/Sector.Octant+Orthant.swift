@@ -2,12 +2,13 @@
 // Lossless projection between Sector.Octant and its Orthant<3> carrier — the x/y/z
 // binary-axis decomposition.
 
-public import Sector_Primitives
 public import Orthant_Primitives
+public import Sector_Primitives
 
 extension Sector.Octant {
-    /// The 3D orthant this octant occupies (axis 0 = X, 1 = Y, 2 = Z); the sign triple of
-    /// the case is exactly the per-axis direction.
+    /// The 3D orthant this octant occupies.
+    ///
+    /// Axis 0 = X, 1 = Y, 2 = Z; the sign triple of the case is exactly the per-axis direction.
     @inlinable
     public var orthant: Orthant<3> {
         let signs: (Direction, Direction, Direction) =
