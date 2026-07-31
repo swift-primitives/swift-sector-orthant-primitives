@@ -3,8 +3,15 @@
 import Sector_Orthant_Primitives
 import Testing
 
-@Suite
-struct `Sector.Quadrant Orthant projection` {
+extension Sector.Quadrant {
+    @Suite struct `Orthant Test` {
+        @Suite struct Unit {}
+        @Suite struct `Edge Case` {}
+        @Suite struct Integration {}
+    }
+}
+
+extension Sector.Quadrant.`Orthant Test`.Unit {
     @Test
     func `quadrant I is all-positive`() {
         #expect(Sector.Quadrant.I.orthant == Orthant<2>(repeating: .positive))
@@ -26,8 +33,15 @@ struct `Sector.Quadrant Orthant projection` {
     }
 }
 
-@Suite
-struct `Sector.Octant Orthant projection` {
+extension Sector.Octant {
+    @Suite struct `Orthant Test` {
+        @Suite struct Unit {}
+        @Suite struct `Edge Case` {}
+        @Suite struct Integration {}
+    }
+}
+
+extension Sector.Octant.`Orthant Test`.Unit {
     @Test
     func `octant sign triples are its orthant`() {
         #expect(Sector.Octant.ppp.orthant == Orthant<3>(repeating: .positive))
