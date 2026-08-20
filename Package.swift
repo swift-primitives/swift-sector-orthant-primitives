@@ -1,16 +1,25 @@
-// swift-tools-version: 6.3.3
+// swift-tools-version: 6.4
 import PackageDescription
 
 let package = Package(
     name: "swift-sector-orthant-primitives",
-    platforms: [.macOS("27"), .iOS("27"), .tvOS("27"), .watchOS("27"), .visionOS("27")],
+    platforms: [.macOS(.v27), .iOS(.v27), .tvOS(.v27), .watchOS(.v27), .visionOS(.v27)],
     products: [
         .library(name: "Sector Orthant Primitives", targets: ["Sector Orthant Primitives"]),
-        .library(name: "Sector Orthant Primitives Test Support", targets: ["Sector Orthant Primitives Test Support"]),
+        .library(
+            name: "Sector Orthant Primitives Test Support",
+            targets: ["Sector Orthant Primitives Test Support"]
+        ),
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-primitives/swift-sector-primitives.git", branch: "main"),
-        .package(url: "https://github.com/swift-primitives/swift-orthant-primitives.git", branch: "main"),
+        .package(
+            url: "https://github.com/swift-primitives/swift-sector-primitives.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-primitives/swift-orthant-primitives.git",
+            branch: "main"
+        ),
     ],
     targets: [
         .target(
@@ -20,8 +29,15 @@ let package = Package(
                 .product(name: "Orthant Primitives", package: "swift-orthant-primitives"),
             ]
         ),
-        .target(name: "Sector Orthant Primitives Test Support", dependencies: ["Sector Orthant Primitives"], path: "Tests/Support"),
-        .testTarget(name: "Sector Orthant Primitives Tests", dependencies: ["Sector Orthant Primitives", "Sector Orthant Primitives Test Support"]),
+        .target(
+            name: "Sector Orthant Primitives Test Support",
+            dependencies: ["Sector Orthant Primitives"],
+            path: "Tests/Support"
+        ),
+        .testTarget(
+            name: "Sector Orthant Primitives Tests",
+            dependencies: ["Sector Orthant Primitives", "Sector Orthant Primitives Test Support"]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
