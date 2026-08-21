@@ -1,5 +1,3 @@
-// Sector+Orthant Tests.swift
-
 import Sector_Orthant_Primitives
 import Testing
 
